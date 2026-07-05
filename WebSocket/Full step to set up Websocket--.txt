@@ -1,0 +1,56 @@
+Full step to set up Websocket--
+
+npm init
+npm i express socket.io
+create file index.html and index.js
+IN js file
+const express = require('express');
+const app = express();
+const { Server } = require('socket.io');
+const http = require('http');
+const server = http.createServer(app);
+const io = new Server(server);
+
+create io.on -> 
+    io.on('connection', (socket) => {
+    	socket.on('send name', (username) => {
+        	io.emit('send name', (username));
+    	});
+
+    	socket.on('send message', (chat) => {
+        	io.emit('send message', (chat));
+    	});
+    });
+call html file->
+  app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/index.html');
+  });
+
+listen ->
+   server.listen(port, () => {
+    console.log(`Server is listening at the port:${port}`);
+   });
+In HTML file ->
+	<div class="flex flex-col justify-center items-center mt-5" id="messageArea"></div>
+	<script src="/socket.io/socket.io.js"></script>
+<script>
+    let socket = io();
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        if (message.value) {
+            socket.emit('send name', myname.value);
+            socket.emit('send message', message.value);
+            message.value = "";
+        }
+    });
+    socket.on("send name", (username) => {
+        let name = document.createElement("p");
+        name.textContent = username + ":";
+        messageArea.appendChild(name);
+    });
+    socket.on("send message", (chat) => {
+        let chatContent = document.createElement("p");
+        chatContent.textContent = chat;
+        messageArea.appendChild(chatContent);
+    });
+</script>

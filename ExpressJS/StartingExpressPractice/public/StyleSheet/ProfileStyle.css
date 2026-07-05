@@ -1,0 +1,79 @@
+body, html{
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+*::selection, *::-webkit-selection, *::-moz-selection{
+  background: #3498dba0;
+  color: #ecf0f1;
+}
+body, .sectionTidyScroll{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  border-box: box-sizing;
+}
+.sectionTidyScroll{
+  height: 100vh;
+  padding: 15px;
+  box-sizing: border-box;
+}
+.sectionTidyScroll > img{
+  max-height: 100vh;
+  max-width: 45vw;
+}
+.sectionTidyScroll:has(> img){
+  flex-direction: row; !important;
+  justify-content: space-evenly !important;
+}
+.sectionTidyScroll{
+  position: relative;
+}
+#section1{
+  background-image: url(https://cdn.pixabay.com/photo/2019/07/23/08/48/potato-field-4357002_1280.jpg);
+  background-size: cover;
+  background-position: 50% 25%;
+}
+.sectionTidyScroll h2{
+  font-family: Monospace;
+  font-size: xxx-large;
+  word-break: break-word;
+}
+.sectionTidyScroll > div > p{
+  font-family: Monospace;
+  font-size: large;
+  color: #990000;
+  padding: 5px;
+  background: #eeeeee99;
+  text-shadow: 1px 1px 1px black;
+}
+#section1 > p, .sectionTidyScroll h2{
+  color: #990000;
+  text-transform: uppercase;
+}
+#section1 > p{
+  padding: 5px;
+  background: #eeeeeedd;
+  font-family: Helvetica;
+  font-size: x-large;
+}
+#section1 > *{
+  text-shadow: 2px 2px 1px black;
+}
+#scrollTidy{
+  display: none;
+  background: black;
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 3px;
+}
+@media (hover: none){
+  #scrollTidy{
+    display: block !important;
+  }
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rohan chat app</title>
+</head>
+<body>
+    <h1>chatting start</h1>
+    <input type="text" id="message" placeholder="enter your message">
+    <button id="sendBtn">send</button>
+    <div id="messages"></div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io(); 
+        
+        const send = document.getElementById("sendBtn");
+        const messagein = document.getElementById("message");
+        const allMessage = document.getElementById("messages");
+        socket.on("message",(message)=>{
+            const p = document.createElement("p");
+            p.innerText = message;
+            allMessage.appendChild(p);
+        });
+        
+        send.addEventListener("click",()=>{
+            const message = messagein.value;
+            socket.emit("user-message",message);
+        })
+    </script>
+</body>
+</html>
