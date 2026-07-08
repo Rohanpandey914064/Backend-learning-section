@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f5f5f5;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  width: 350px;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px gray;
+}
+
+.box h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.box input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.box button {
+  width: 100%;
+  padding: 10px;
+  background: royalblue;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.box p {
+  margin-top: 15px;
+  text-align: center;
+}
