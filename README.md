@@ -75,7 +75,7 @@ It covers essential concepts, frameworks, and hands-on implementations that form
     ```bash
     npm start
 
-📌 Notes
+- Notes
 This repository is a learning playground.
 Each folder or file represents a concept or practice exercise.
 Feel free to explore, learn, and contribute!
