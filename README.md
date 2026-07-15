@@ -1,4 +1,4 @@
-# Backend Learning Section 🚀
+# Backend Learning Section 
 
 This repository documents my journey of learning and practicing **backend development**.  
 It covers essential concepts, frameworks, and hands-on implementations that form the backbone of modern web applications.
