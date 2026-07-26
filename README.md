@@ -5,7 +5,7 @@ It covers essential concepts, frameworks, and hands-on implementations that form
 
 ---
 
-## 📚 Topics Covered
+## Topics Covered
 
 - **Authentication**
   - Implemented user login/signup flows
